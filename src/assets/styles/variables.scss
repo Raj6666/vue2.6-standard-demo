@@ -1,0 +1,295 @@
+/* 
+*  全局公共常用工具样式
+*/
+
+/* 左右居中 */
+@mixin horizontal-center {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* 右浮动 */
+@mixin pull-right {
+    float: right !important;
+}
+
+/* 左浮动 */
+@mixin pull-left {
+    float: left !important;
+}
+
+/* 文本居右 */
+@mixin text-right {
+    text-align: right !important;
+}
+
+/* 文本居左 */
+@mixin text-left {
+    text-align: left !important;
+}
+
+/* 文本居中 */
+@mixin text-center {
+    text-align: center !important;
+}
+
+/* 隐藏 */
+@mixin hide {
+    display: none !important;
+}
+
+/* 显示 */
+@mixin show {
+    display: block !important;
+}
+
+/* 隐藏 */
+@mixin invisible {
+    visibility: hidden;
+}
+
+/* 清楚浮动 */
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.clearfix:after,
+.clearfix:before {
+    content: " ";
+    display: block;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+/* 行高 */
+@mixin line-height($heightValue: 12) {
+    line-height: $heightValue + px; //fallback for old browsers
+    line-height: (0.125 * $heightValue) + rem;
+}
+
+
+/* Retina 背景图片 */
+/* @include imgRetina(images/waterlily, jpg, 200px, 200px, no-repeat, center); */
+@mixin imgRetina($image, $extension, $width, $height, $position: center, $repeat: no-repeat) {
+    background: url($image + '.' + $extension) $repeat $position;
+         
+    @media 
+    screen and (-webkit-min-device-pixel-ratio: 2),
+    screen and (   min--moz-device-pixel-ratio: 2),
+    screen and (   -moz-min-device-pixel-ratio: 2),
+    screen and (     -o-min-device-pixel-ratio: 2/1),
+    screen and (        min-device-pixel-ratio: 2),
+    screen and (             min-resolution: 192dpi), 
+    screen and (             min-resolution: 2dppx) {    
+       background: url($image + '@2x' + '.' + $extension) $repeat $position;
+       background-size: $width $height;
+    }
+}
+
+/* 字体大小 */
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+/* 超出一行文本省略 */
+@mixin text-ellipsis() {
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 多行超出文本省略 */
+@mixin text-ellipsis-more($num) {
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:$num;
+  display: -moz-box; 
+  -moz-line-clamp: $num !important;
+  -moz-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 圆角 */
+@mixin border-radius($radius) {
+  -webkit-border-radius:$radius;
+  -moz-border-radius:$radius;
+  -o-border-radius:$radius;
+  border-radius:$radius;
+}
+
+/* 设置阴影 */
+@mixin shadow($shadow...) {
+  -webkit-box-shadow:$shadow;
+  -moz-box-shadow:$shadow;
+  -o-box-shadow:$shadow;
+  box-shadow:$shadow;
+}
+
+/* 绝对居中 */
+@mixin center($width, $height) {
+  position: absolute;
+  left:50%;
+  top:50%;
+  width:$width;
+  height:$height;
+  margin:(-$height / 2) 0 0 (-$width / 2);
+}
+
+/* 最小高度，IE6不支持min-height，但是使用height能达到一样的效果 */
+@mixin minHeight($min-height) {
+    min-height: $min-height;
+    height: auto !important;
+    height: $min-height;
+}
+
+/* display:inline-block;IE6,7块级元素对inline-block支持不好，需要触发Layout；内联元素就不需要了。 */
+@mixin dib() {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+/* flex布局 */
+@mixin flex-box{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;  
+  display: -ms-flex;
+  display: flex;
+}
+
+@mixin flex-1($percent){
+  width:$percent;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+
+@mixin justify-content{
+    -webkit-justify-content:space-between;
+    justify-content:space-between;
+  }
+
+/* 关于动画 */
+@mixin transition($property:all,$duration:0.5s,$timing:ease){
+    -webkit-transition:$property $duration $timing;
+    -moz-transition:$property $duration $timing;
+    -ms-transition:$property $duration $timing;
+    -o-transition:$property $duration $timing;
+    transition:$property $duration $timing;
+}
+
+@mixin transform-origin($origin) {
+    -moz-transform-origin:$origin;
+    -webkit-transform-origin:$origin;
+    -ms-transform-origin:$origin;
+    -o-transform-origin:$origin;
+    transform-origin:$origin;
+}
+
+@mixin scale($scale) {
+    -moz-transform:scale($scale);
+    -webkit-transform:scale($scale);
+    -ms-transform:scale($scale);
+    -o-transform:scale($scale);
+    transform:scale($scale);
+}
+
+/* 透明度 */
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    filter: alpha(opacity=$opacity * 100);//兼容IE
+  }
+  
+
+/* 使用纯CSS现实三角形，兼容所有浏览器；使用了三个参数，第一个是"方向"，第二个是"大小"，第三个是"颜色"，省得每次都写一大堆代码，非常方便啦； */
+@mixin arrow($direction,
+$size,
+$color) {
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    overflow: hidden;
+    border-width: $size;
+    cursor: pointer;
+    @if $direction == top {
+        border-style: dashed dashed solid dashed;
+        border-color: transparent transparent $color transparent;
+        border-top: none;
+    }
+    @else if $direction == bottom {
+        border-style: solid dashed dashed dashed;
+        border-color: $color transparent transparent transparent;
+        border-bottom: none;
+    }
+    @else if $direction == right {
+        border-style: dashed dashed dashed solid;
+        border-color: transparent transparent transparent $color;
+        border-right: none;
+    }
+    @else if $direction == left {
+        border-style: dashed solid dashed dashed;
+        border-color: transparent $color transparent transparent;
+        border-left: none;
+    }
+}
+
+// 不变宽高比
+@mixin constant-width-to-height {
+  &::before {
+    content: '';
+    padding-top: 100%;
+    float: left;
+  }
+  @include clearfix;
+}
+
+// 使子元素均匀分布
+@mixin evenly-distributed-children {
+  display: flex;
+  justify-content: space-between;
+}
+
+// 使用 flexbox 居中
+@mixin flexbox-centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 使用网格居中
+@mixin grid-centering {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+//  使用transform居中子元素
+@mixin transform-centering {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
