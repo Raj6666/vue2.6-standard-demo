@@ -11,7 +11,6 @@
 
 <script>
 import Api from '@/apis/index.js'
-import HelloWorld from "@components/common/HelloWorld"
 
 export default {
   name: "Home",
