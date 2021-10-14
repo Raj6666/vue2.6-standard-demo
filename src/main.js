@@ -11,8 +11,12 @@ import "@/assets/styles/border.css"; // 全局border样式重置
 Vue.config.productionTip = false;
 Vue.use(Interceptors.request); // 请求拦截器
 Vue.use(Interceptors.response); // 相应拦截器
-require("./request/mock/index.js"); // 模拟普通请求状态的mock
 require("./components/index.js"); // 全局注册公共组件
+
+// 仅在开发环境时引入mock
+if (process.env.NODE_ENV === "development") {
+  require("./request/mock/index.js"); // 模拟普通请求状态的mock
+}
 
 new Vue({
   router,
