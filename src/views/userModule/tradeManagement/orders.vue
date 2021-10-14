@@ -1,13 +1,9 @@
 <template>
-    <div>
-        订单列表
-    </div>
+  <div>订单列表</div>
 </template>
 <script>
 export default {
-    name: 'orders'
-}
+  name: "orders",
+};
 </script>
-<style lang="scss">
-    
-</style>
+<style lang="scss"></style>

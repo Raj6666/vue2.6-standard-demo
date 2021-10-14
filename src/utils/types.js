@@ -1,9 +1,9 @@
 export function isString(obj) {
-  return Object.prototype.toString.call(obj) === '[object String]';
+  return Object.prototype.toString.call(obj) === "[object String]";
 }
 
 export function isObject(obj) {
-  return Object.prototype.toString.call(obj) === '[object Object]';
+  return Object.prototype.toString.call(obj) === "[object Object]";
 }
 
 export function isHtmlElement(node) {
@@ -12,10 +12,13 @@ export function isHtmlElement(node) {
 
 export const isFunction = (functionToCheck) => {
   var getType = {};
-  return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
+  return (
+    functionToCheck &&
+    getType.toString.call(functionToCheck) === "[object Function]"
+  );
 };
 
-export const isUndefined = (val)=> {
+export const isUndefined = (val) => {
   return val === void 0;
 };
 

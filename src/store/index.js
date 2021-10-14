@@ -8,9 +8,9 @@ export default new Vuex.Store({
     isLoading: false, // 是否加载中
   },
   mutations: {
-    updateLoadingStatus (state, payload) {
+    updateLoadingStatus(state, payload) {
       state.isLoading = payload.isLoading;
-    }
+    },
   },
   actions: {},
   modules: {},

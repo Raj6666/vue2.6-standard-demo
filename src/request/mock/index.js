@@ -1,2 +1,2 @@
-import './home'
-import './userModule'
+import "./home";
+import "./userModule";

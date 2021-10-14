@@ -1,16 +1,14 @@
 <template>
-    <div>
-        HelloWorld from Common Component
-    </div>
+  <div>HelloWorld from Common Component</div>
 </template>
 <script>
 export default {
-    name: 'HelloWorld'
-}
+  name: "HelloWorld",
+};
 </script>
 <style lang="scss" scoped>
-    div {
-        font-weight: bold;
-        color: darkcyan;
-    }
+div {
+  font-weight: bold;
+  color: darkcyan;
+}
 </style>
