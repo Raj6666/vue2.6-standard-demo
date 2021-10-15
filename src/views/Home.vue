@@ -10,22 +10,20 @@
 </template>
 
 <script>
-import Api from "@/apis/index.js";
-
 export default {
   name: "Home",
   components: {},
   methods: {
     async getHomeData() {
-      const result = await Api.home.getHomeList({ name: "测试" });
+      const result = await this.Api.home.getHomeList({ name: "测试" });
       console.log(result);
     },
     async updateHomeData() {
-      const result = await Api.home.updateHomeList({ name: "测试" });
+      const result = await this.Api.home.updateHomeList({ name: "测试" });
       console.log(result);
     },
     async getUserData() {
-      const result = await Api.userModule.getUser({ name: "测试" });
+      const result = await this.Api.userModule.getUser({ name: "测试" });
       console.log(result);
     },
   },
