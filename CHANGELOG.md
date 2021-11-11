@@ -1,38 +1,3 @@
-# Changelog
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
-### [0.1.3](https://github.com/Raj6666/vue2.6-standard-demo/compare/v0.1.2...v0.1.3) (2021-11-11)
-
-### [0.1.2](https://github.com/Raj6666/vue2.6-standard-demo/compare/v0.1.1...v0.1.2) (2021-11-11)
-
-
-### Features
-
-* 测试提交1 ([128cb1b](https://github.com/Raj6666/vue2.6-standard-demo/commit/128cb1b958bca1260ad56595b5ce46c1d666bfca))
-* 测试提交2 ([0d8d453](https://github.com/Raj6666/vue2.6-standard-demo/commit/0d8d453ee288ae8dd91f4936a181e76c5e0169d1))
-
-## [0.1.1](https://github.com/Raj6666/vue2.6-standard-demo/compare/v0.1.0...v0.1.1) (2021-11-11)
-
-
-### Features
-
-* 测试changelog升级版本 ([870d208](https://github.com/Raj6666/vue2.6-standard-demo/commit/870d20876707c2d5e8d8ac774f66cbbb1a5646e8))
-* 测试提交1 ([128cb1b](https://github.com/Raj6666/vue2.6-standard-demo/commit/128cb1b958bca1260ad56595b5ce46c1d666bfca))
-
-
-
-
-## [0.1.1](https://github.com/Raj6666/vue2.6-standard-demo/compare/v0.1.0...v0.1.1) (2021-11-11)
-
-
-### Features
-
-* 测试changelog升级版本 ([870d208](https://github.com/Raj6666/vue2.6-standard-demo/commit/870d20876707c2d5e8d8ac774f66cbbb1a5646e8))
-
-
-
-## [0.1.1](https://github.com/Raj6666/vue2.6-standard-demo/compare/v0.1.0...v0.1.1) (2021-11-11)
 
 
 
