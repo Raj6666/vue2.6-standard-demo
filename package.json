@@ -1,6 +1,6 @@
 {
   "name": "vue2.6-standard-demo",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --mode development",
@@ -14,9 +14,9 @@
     "build:rc": "vue-cli-service build --mode rc",
     "lint": "vue-cli-service lint",
     "genChangelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1 && git add CHANGELOG.md ",
-    "version-major": "standard-version -r major && genChangelog",
-    "version-minor": "standard-version -r minor && genChangelog",
-    "version-patch": "standard-version -r patch && genChangelog"
+    "version-major": "standard-version -r major && conventional-changelog -p angular -i CHANGELOG.md -s -r 1 && git add CHANGELOG.md ",
+    "version-minor": "standard-version -r minor && conventional-changelog -p angular -i CHANGELOG.md -s -r 1 && git add CHANGELOG.md ",
+    "version-patch": "standard-version -r patch && conventional-changelog -p angular -i CHANGELOG.md -s -r 1 && git add CHANGELOG.md "
   },
   "dependencies": {
     "compression-webpack-plugin": "^5.0.1",
