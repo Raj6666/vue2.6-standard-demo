@@ -1,5 +1,13 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [0.2.0](https://github.com/Raj6666/vue2.6-standard-demo/compare/v0.1.3...v0.2.0) (2021-11-11)
 
 
+### Features
+
+* 调整changlog逻辑为版本更新时才发布 ([d056be8](https://github.com/Raj6666/vue2.6-standard-demo/commit/d056be8cc03c9c5b9237a8408c57d5cfe37e8f6d))
 
 ## 0.1.0 (2021-11-11)
 
