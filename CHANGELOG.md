@@ -4,6 +4,17 @@
 ### Features
 
 * 测试changelog升级版本 ([870d208](https://github.com/Raj6666/vue2.6-standard-demo/commit/870d20876707c2d5e8d8ac774f66cbbb1a5646e8))
+* 测试提交1 ([128cb1b](https://github.com/Raj6666/vue2.6-standard-demo/commit/128cb1b958bca1260ad56595b5ce46c1d666bfca))
+
+
+
+
+## [0.1.1](https://github.com/Raj6666/vue2.6-standard-demo/compare/v0.1.0...v0.1.1) (2021-11-11)
+
+
+### Features
+
+* 测试changelog升级版本 ([870d208](https://github.com/Raj6666/vue2.6-standard-demo/commit/870d20876707c2d5e8d8ac774f66cbbb1a5646e8))
 
 
 
