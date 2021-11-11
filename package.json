@@ -13,7 +13,7 @@
     "build:test": "vue-cli-service build --mode test",
     "build:rc": "vue-cli-service build --mode rc",
     "lint": "vue-cli-service lint",
-    "genChangelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md "
+    "genChangelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md "
   },
   "dependencies": {
     "compression-webpack-plugin": "^5.0.1",
