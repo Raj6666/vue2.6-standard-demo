@@ -12,7 +12,8 @@
     "build:dev": "vue-cli-service build --mode development",
     "build:test": "vue-cli-service build --mode test",
     "build:rc": "vue-cli-service build --mode rc",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "genChangelog": "conventional-changelog -p angular -i CHANGELOG.md -s  && git add CHANGELOG.md "
   },
   "dependencies": {
     "compression-webpack-plugin": "^5.0.1",
@@ -34,6 +35,9 @@
     "axios": "^0.21.4",
     "babel-eslint": "^10.1.0",
     "chalk": "^4.1.0",
+    "conventional-changelog": "^3.1.24",
+    "conventional-changelog-cli": "^2.1.1",
+    "conventional-commits-detector": "^1.0.3",
     "eslint": "^6.8.0",
     "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-vue": "^6.2.2",
@@ -48,6 +52,7 @@
   },
   "husky": {
     "hooks": {
+      "pre-commit": "npm run genChangelog",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "post-commit": "git update-index --again"
     }
