@@ -13,9 +13,10 @@
     "build:test": "vue-cli-service build --mode test",
     "build:rc": "vue-cli-service build --mode rc",
     "lint": "vue-cli-service lint",
-    "version-major": "standard-version -r major && conventional-changelog -p angular -i CHANGELOG.md -s -r 1 && git add CHANGELOG.md ",
-    "version-minor": "standard-version -r minor && conventional-changelog -p angular -i CHANGELOG.md -s -r 1 && git add CHANGELOG.md ",
-    "version-patch": "standard-version -r patch && conventional-changelog -p angular -i CHANGELOG.md -s -r 1 && git add CHANGELOG.md "
+    "genChangelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1 && git add CHANGELOG.md",
+    "version-major": "standard-version -r major && npm run genChangelog",
+    "version-minor": "standard-version -r minor && npm run genChangelog ",
+    "version-patch": "standard-version -r patch && npm run genChangelog "
   },
   "dependencies": {
     "compression-webpack-plugin": "^5.0.1",
