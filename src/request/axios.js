@@ -6,30 +6,29 @@
  * @LastEditors: husiyuan
  * @LastEditTime: 2020-07-21 15:14:30
  */
-import axios from "axios";
-import store from "@/store/index";
-var qs = require("qs");
+import axios from 'axios';
+import store from '@/store/index';
+var qs = require('qs');
 
 class HTTP {
   // 公开函数
   request({
     url,
-    method = "get",
+    method = 'get',
     data = {},
     headers = {
-      "Content-Type": "application/x-www-form-urlencoded",
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
-    responseType = "json",
+    responseType = 'json',
   }) {
     return new Promise((resolve, reject) => {
       // 设置全局loading状态
-      store.commit("updateLoadingStatus", { isLoading: true });
+      store.commit('updateLoadingStatus', {isLoading: true});
       // 发起请求
       axios({
         url: url,
-        data: method === "post" || method === "put" ? data : null,
-        params:
-          method === "get" || method === "delete" ? qs.stringify(data) : null,
+        data: method === 'post' || method === 'put' ? data : null,
+        params: method === 'get' || method === 'delete' ? qs.stringify(data) : null,
         method: method,
         headers,
         responseType,
@@ -50,11 +49,11 @@ class HTTP {
     console.log(res);
     const statusCode = res.code; // http返回状态码
     // 设置全局loading状态
-    store.commit("updateLoadingStatus", {
+    store.commit('updateLoadingStatus', {
       isLoading: false,
     });
     // TODO: 根据不同项目需求，除了判断http状态码，还需判断返回的对象的结果码code
-    if (statusCode && String(statusCode).startsWith("2")) {
+    if (statusCode && String(statusCode).startsWith('2')) {
       resolve(res.data); // 若请求成功，则把请求结果传入resolve中
     } else {
       reject(res.data); // 调用reject，关闭请求流程
@@ -67,7 +66,7 @@ class HTTP {
     // TODO: 根据不同项目需求，调起当前项目使用的UI库的全局通知工具，展示错误信息
     console.log(res);
     // 设置全局loading状态
-    store.commit("updateLoadingStatus", {
+    store.commit('updateLoadingStatus', {
       isLoading: false,
     });
   }

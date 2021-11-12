@@ -3,7 +3,6 @@
 </template>
 <script>
 export default {
-  name: "records",
+  name: 'records',
 };
 </script>
-<style lang="scss"></style>

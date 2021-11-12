@@ -1,15 +1,11 @@
-import HTTP from "../request/axios";
+import HTTP from '../request/axios';
 const http = new HTTP();
 
 // 加载所有子模块
-const requireContext = require.context("./", true, /index\.js$/);
+const requireContext = require.context('./', true, /index\.js$/);
 let allApiModules = {};
 requireContext.keys().forEach((name) => {
-  allApiModules = Object.assign(
-    {},
-    allApiModules,
-    requireContext(name).default || {}
-  );
+  allApiModules = Object.assign({}, allApiModules, requireContext(name).default || {});
 });
 
 // 获取token
@@ -19,14 +15,12 @@ const getTokenFn = () => {
   //   loginData = JSON.parse(loginData) || {};
   //   return loginData.token || "";
   // }
-  return "RajToken";
+  return 'RajToken';
 };
 
 // baseUrl
 const baseUrl = () => {
-  return ["development"].includes(process.env.NODE_ENV)
-    ? ""
-    : process.env.VUE_APP_API_PATH;
+  return ['development'].includes(process.env.NODE_ENV) ? '' : process.env.VUE_APP_API_PATH;
 };
 
 // 格式化api方法
@@ -47,17 +41,14 @@ const toApiFn = (configData = null) => {
            */
           api[modeName][modeItem.name] = (params = {}, option = {}) => {
             return http.request({
-              url:
-                option?.url || (modeItem.baseUrl || baseUrl()) + modeItem.url,
-              method: option?.method || modeItem?.method || "post",
+              url: option?.url || (modeItem.baseUrl || baseUrl()) + modeItem.url,
+              method: option?.method || modeItem?.method || 'post',
               data:
-                params instanceof FormData
-                  ? params
-                  : Object.assign({}, modeItem?.params, params),
+                params instanceof FormData ? params : Object.assign({}, modeItem?.params, params),
               headers: Object.assign({}, modeItem?.headers, option?.headers, {
-                token: modeItem.noToken ? "" : getTokenFn(),
+                token: modeItem.noToken ? '' : getTokenFn(),
               }),
-              responseType: option?.responseType || "json",
+              responseType: option?.responseType || 'json',
             });
           };
         }

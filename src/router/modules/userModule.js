@@ -46,49 +46,48 @@ export default [
   //   },
 
   {
-    path: "/user",
-    name: "user",
-    component: () =>
-      import(/* webpackChunkName: "home" */ "@/views/userModule/home.vue"),
+    path: '/user',
+    name: 'user',
+    component: () => import(/* webpackChunkName: "home" */ '@/views/userModule/home.vue'),
     alwaysShow: true,
     meta: {
       keepAlive: true, // 是否缓存组件
-      title: "个人中心", // 路由中文名称
+      title: '个人中心', // 路由中文名称
     },
     children: [
       {
-        path: "tradeManagement",
-        name: "tradeManagement",
+        path: 'tradeManagement',
+        name: 'tradeManagement',
         redirect: {
-          name: "orders",
+          name: 'orders',
         },
-        component: { template: `<router-view></router-view>` },
+        component: {template: `<router-view></router-view>`},
         meta: {
-          title: "交易管理",
+          title: '交易管理',
         },
         children: [
           {
-            path: "orders",
-            name: "orders",
+            path: 'orders',
+            name: 'orders',
             component: () =>
               import(
-                /* webpackChunkName: "orders" */ "@/views/userModule/tradeManagement/orders.vue"
+                /* webpackChunkName: "orders" */ '@/views/userModule/tradeManagement/orders.vue'
               ), // 按需引入组件，提高首屏加载速度
             meta: {
               keepAlive: false, // 是否缓存组件
-              title: "我的订单", // 路由中文名称
+              title: '我的订单', // 路由中文名称
             },
           },
           {
-            path: "records",
-            name: "records",
+            path: 'records',
+            name: 'records',
             component: () =>
               import(
-                /* webpackChunkName: "records" */ "@/views/userModule/tradeManagement/records.vue"
+                /* webpackChunkName: "records" */ '@/views/userModule/tradeManagement/records.vue'
               ), // 按需引入组件，提高首屏加载速度
             meta: {
               keepAlive: false, // 是否缓存组件
-              title: "交易记录", // 路由中文名称
+              title: '交易记录', // 路由中文名称
             },
           },
         ],

@@ -10,7 +10,6 @@
 </template>
 <script>
 export default {
-  name: "userHome",
+  name: 'userHome',
 };
 </script>
-<style lang="scss"></style>

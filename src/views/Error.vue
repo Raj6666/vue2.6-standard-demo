@@ -7,21 +7,19 @@
 
 <script>
 export default {
-  name: "StatusError",
+  name: 'StatusError',
   data() {
     return {
-      errorContent: "",
+      errorContent: '',
     };
   },
   mounted() {
-    this.errorContent = this.$route.query.content
-      ? this.$route.query.content
-      : "opps,页面找不到了";
+    this.errorContent = this.$route.query.content ? this.$route.query.content : 'opps,页面找不到了';
   },
   methods: {
     // 返回首页
     returnHome() {
-      this.$router.push("/");
+      this.$router.push('/');
     },
   },
 };
@@ -29,21 +27,21 @@ export default {
 
 <style lang="scss" scoped>
 .error-content {
-  width: 100%;
-  height: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgb(49, 33, 33);
-  color: #fff;
+  width: 100%;
+  height: 100%;
   font-size: 25px;
+  color: #ffffff;
+  background: rgb(49, 33, 33);
+  flex-direction: column;
   .return-button {
-    background: #4b4b6b;
-    border: 1px solid #fff;
+    border: 1px solid #ffffff;
     border-radius: 5px;
-    font-size: 20px;
     padding: 5px;
+    font-size: 20px;
+    background: #4b4b6b;
     cursor: pointer;
   }
 }

@@ -4,7 +4,7 @@
       "stylelint-order"
   ],
   "rules": {
-    "color-hex-case": "upper",
+    "color-hex-case": "lower",
     "block-no-empty": true,
     "color-hex-length": "long",
     "selector-type-no-unknown": [true, {

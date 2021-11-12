@@ -1,8 +1,8 @@
-import Mock from "mockjs";
+import Mock from 'mockjs';
 
 const Random = Mock.Random;
 
-Mock.mock(RegExp("/mock/user" + ".*"), "get", (params) => {
+Mock.mock(RegExp('/mock/user' + '.*'), 'get', (params) => {
   let citys = [];
   citys.push(params);
   for (let i = 0; i < 10; i++) {
