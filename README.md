@@ -1,6 +1,10 @@
 # vue2.6-standard-demo
 vue标准化项目
 
+vue2.6标准前端架构项目，包含api封装及自动引入、全局样式配置、公共组件的全局注册、axios请求的封装与请求成功与失败的回调、请求拦截、请求模拟、路由守卫、路由配置自动引入。。。
+
+项目管理上，使用了CommitLint来规范代码提交；使用了changelog结合Standard-version来规范版本控制与更新记录；使用了stylelint与prettier来规范代码格式，并且在代码提交时利用lint-staged工具实现自动检查代码并修复
+
 ### 项目文件树
 ```
 .
