@@ -10,7 +10,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin'); // 引入打�
 const chalk = require('chalk');
 
 //环境判断
-const IS_PROD = ['production'].includes(process.env.NODE_ENV);
+const IS_PROD = !['local'].includes(process.env.NODE_ENV);
 // const IS_DEV = ["development"].includes(process.env.NODE_ENV);
 
 const resolve = (dir) => path.join(__dirname, dir);
@@ -132,6 +132,12 @@ module.exports = {
     );
 
     config.plugins = [...config.plugins, ...plugins];
+
+    // 加js的hash  参考：https://blog.csdn.net/weixin_34403976/article/details/118091790
+    config.output.filename = IS_PROD ? `vvic_[name].[contenthash].js` : `vvic_[name].[hash].js`;
+    config.output.chunkFilename = IS_PROD
+      ? `vvic_[name].[contenthash].js`
+      : `vvic_[name].[hash].js`;
   },
   css: {
     extract: IS_PROD,
